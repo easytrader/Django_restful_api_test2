@@ -21,11 +21,13 @@ def TaskViewSet(request):
     """
     print("leo test in TaskViewSet")
     if request.method == 'GET':
+        print("leo test in GET")
         Tasks = Task.objects.all()
         serializer = TaskSerializer(Tasks, many=True)
         return Response(serializer.data)
 
     elif request.method == 'POST':
+        print("leo test in POST")
         serializer = TaskSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save()
