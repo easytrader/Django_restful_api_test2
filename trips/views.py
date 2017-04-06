@@ -20,6 +20,8 @@ def TaskViewSet(request):
     List all snippets, or create a new snippet.
     """
     print("leo test in TaskViewSet")
+    print("request.GET[param1]")
+    print(request.GET['id'])
     if request.method == 'GET':
         print("leo test in GET")
         Tasks = Task.objects.all()
