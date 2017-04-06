@@ -17,6 +17,7 @@ from django.conf.urls import url,include
 from django.contrib import admin
 from rest_framework import routers
 from trips.views import TaskViewSet
+from trips.views import hello_world
 
 
 #router = routers.DefaultRouter()
@@ -25,5 +26,6 @@ from trips.views import TaskViewSet
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^task$', TaskViewSet),
+    url(r'^$', hello_world),
     #url(r'^', include(router.urls)),
 ]
